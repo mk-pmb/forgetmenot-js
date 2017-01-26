@@ -1,0 +1,28 @@
+{ "name": "forgetmenot",
+  "version": "1.0.0",
+  "description": "A callback wrapper that cries if you forget to call it before `process.on(exit)`. (lost callback, broken callback chain, break, early)",
+  "keywords": [
+    "broken callback chain",
+    "early exit",
+    "lost callback"
+  ],
+
+  "author": "M.K. (https://github.com/mk-pmb)",
+  "homepage": "https://github.com/mk-pmb/forgetmenot-js#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mk-pmb/forgetmenot-js.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mk-pmb/forgetmenot-js/issues"
+  },
+
+  "private": false, "license": "ISC",
+
+  "main": "forgetmenot.js",
+  "scripts": { "test": "bash test/all.sh" },
+  "directories": { "test": "test" },
+
+
+  "npm vs. BOM = Unexpected token": "-*- coding: UTF-8 -*-"
+}
