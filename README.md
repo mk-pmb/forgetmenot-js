@@ -22,11 +22,11 @@ var forgetMeNot = require('forgetmenot'), importantWordsRgx = /e/;
 
 function sayWordSoon_maybe(word) {
   var sayIt = function () { console.log(word); }, delay,
-    errMsg = 'You forgot to say ' + word + '!';
+    debugHint = 'You forgot to say ' + word + '!';
 
   if (importantWordsRgx.test(word)) {
-    sayIt = forgetMeNot(sayIt,    // original function, required
-                        errMsg);  // optional custom error message
+    sayIt = forgetMeNot(sayIt,        // original function, required
+                        debugHint);   // optional hint
   }
 
   delay = (+process.env['DELAY_' + word.toUpperCase()] || 0);
@@ -42,6 +42,24 @@ sayWordSoon_maybe('purr');
 
 
 <!--#toc stop="scan" -->
+
+
+Known issues
+------------
+
+* There's a limit on how many proxy functions this module can create,
+  becuase it uses an internal ID number for each of them in order to track
+  whether it's still waiting, and our ID number generator has a limit on
+  how many distinguishable ID numbers it can produce.
+  If you hit that limit, a `RangeError` will be thrown.
+  Probably still a better approach than registering thousands of individual
+  `process.on('exit')` event handlers, one for each proxy.
+
+
+
+
+
+
 
 
 License

@@ -8,11 +8,11 @@
 
   function sayWordSoon_maybe(word) {
     var sayIt = function () { console.log(word); }, delay,
-      errMsg = 'You forgot to say ' + word + '!';
+      debugHint = 'You forgot to say ' + word + '!';
 
     if (importantWordsRgx.test(word)) {
-      sayIt = forgetMeNot(sayIt,    // original function, required
-                          errMsg);  // optional custom error message
+      sayIt = forgetMeNot(sayIt,        // original function, required
+                          debugHint);   // optional hint
     }
 
     delay = (+process.env['DELAY_' + word.toUpperCase()] || 0);

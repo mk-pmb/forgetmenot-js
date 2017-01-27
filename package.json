@@ -1,5 +1,5 @@
 { "name": "forgetmenot",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A callback wrapper that cries if you forget to call it before `process.on(exit)`. (lost callback, broken callback chain, break, early)",
   "keywords": [
     "broken callback chain",
@@ -22,6 +22,7 @@
   "main": "forgetmenot.js",
   "scripts": { "test": "bash test/all.sh" },
   "directories": { "test": "test" },
+  "dependencies": { "maxuniqid": "^0.1.0" },
 
 
   "npm vs. BOM = Unexpected token": "-*- coding: UTF-8 -*-"
